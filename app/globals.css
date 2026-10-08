@@ -1,26 +1,77 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
+@custom-variant dark (&:is(.dark *));
+
+/* Light Theme */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+
+  --background: #f5f7ff;
+  --sidebar: #ffffff;
+  --card: #ffffff;
+  --foreground: #172554;
+  --icon-bg: #ede9fe;
+  --primary: #6d28d9;
+  --accent: #2563eb;
+
+  --border: #dbe3f3;
+  --sidebar-text: #64748b;
+
+  /* Additional colors */
+  --muted: #eef2ff;
+  --muted-foreground: #64748b;
+  --input: #dbe3f3;
+  --ring: #6d28d9;
 }
 
+/* Dark Theme */
+.dark {
+  color-scheme: dark;
+
+  --background: #020817;
+  --sidebar: #061426;
+
+  --card: #0b1b30;
+  --foreground: #f8fafc;
+  --icon-bg: #061426;
+  --primary: #8b5cf6;
+  --accent: #3b82f6;
+
+  --border: #16304d;
+  --sidebar-text: #94a3b8;
+
+  /* Additional colors */
+  --muted: #10223a;
+  --muted-foreground: #94a3b8;
+  --input: #16304d;
+  --ring: #8b5cf6;
+}
+
+/* Tailwind CSS v4 color mapping */
 @theme inline {
   --color-background: var(--background);
+  --color-sidebar: var(--sidebar);
+  --color-card: var(--card);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-icon-bg: var(--icon-bg);
+
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+
+  --color-border: var(--border);
+  --color-sidebar-text: var(--sidebar-text);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Base page styles */
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Vazirmatn", sans-serif;
 }
